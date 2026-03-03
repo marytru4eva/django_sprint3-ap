@@ -1,7 +1,8 @@
-#from pathlib import Path
+# from pathlib import Path
 from pathlib import Path
 import sys
-import os
+# import os
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 BLOGICUM_DIR = Path(__file__).resolve().parent
@@ -22,9 +23,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'about',
-    #'homepage',
-    #'ice_cream',
+    # 'about',
+    # 'homepage',
+    # 'ice_cream',
     'blog',
     'pages',
 ]

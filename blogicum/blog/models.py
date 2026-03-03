@@ -64,9 +64,8 @@ class Post(models.Model):
     text = models.TextField(verbose_name='Текст')
     pub_date = models.DateTimeField(
         verbose_name='Дата и время публикации',
-        validators=[MinValueValidator(limit_value=timezone.now)],
-        help_text='Если установить дату и время в будущем — '
-        'можно делать отложенные публикации.'
+        help_text='Если установить дату и время в будущем —'
+                   ' можно делать отложенные публикации.'
     )
     author = models.ForeignKey(
         User,
@@ -104,9 +103,9 @@ class Post(models.Model):
         verbose_name_plural = 'Публикации'
         ordering = ['-pub_date']
         indexes = [
-            models.Index(fields=['-pub_date']),
-            models.Index(fields=['is_published', 'pub_date']),
-            models.Index(fields=['category', 'is_published']),
+          #  models.Index(fields=['-pub_date']),
+          #  models.Index(fields=['is_published', 'pub_date']),
+          #  models.Index(fields=['category', 'is_published']),
         ]
 
     def __str__(self):
