@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.core.validators import MinValueValidator
 from django.utils import timezone
 
 User = get_user_model()
@@ -65,7 +64,7 @@ class Post(models.Model):
     pub_date = models.DateTimeField(
         verbose_name='Дата и время публикации',
         help_text='Если установить дату и время в будущем —'
-                   ' можно делать отложенные публикации.'
+        ' можно делать отложенные публикации.'
     )
     author = models.ForeignKey(
         User,
@@ -102,11 +101,6 @@ class Post(models.Model):
         verbose_name = 'публикация'
         verbose_name_plural = 'Публикации'
         ordering = ['-pub_date']
-        indexes = [
-          #  models.Index(fields=['-pub_date']),
-          #  models.Index(fields=['is_published', 'pub_date']),
-          #  models.Index(fields=['category', 'is_published']),
-        ]
 
     def __str__(self):
         return self.title
