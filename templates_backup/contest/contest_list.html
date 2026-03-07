@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Список заявок на конкурс
+{% endblock %}
+
+{% block content %}
+  <h1>Список заявок на конкурс мороженого</h1>
+  
+  {% for contest in contests %}
+    <div>
+      {{ contest.id }}, {{ contest.title }}, {{ contest.price }}, {{ contest.description }}, {{ contest.comment }}
+    </div>
+  {% empty %}
+    <p>Пока нет ни одной заявки</p>
+  {% endfor %}
+{% endblock %}
